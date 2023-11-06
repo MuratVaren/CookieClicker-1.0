@@ -16,6 +16,7 @@
                MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="ImgCookie_MouseLeftButtonUp"/>
         <Label Grid.Column="1" Name="LblGetal" Content="" HorizontalAlignment="Center"
                VerticalAlignment="Center" FontSize="50"/>
+
         <Grid Grid.Column="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -38,6 +39,10 @@
             <Label Grid.Row="1" Grid.Column="1" Name="LblGranny" Content="GRANNY" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <Button Grid.Row="1" Grid.Column="2" Name="BtnGranny" Content="buy for 100" Click="BtnBuy"/>
 
+
+            <Image Grid.Row="2" Grid.Column="0" Stretch="Fill"  Source="Assets/Images/Granny.png"/>
+            <Label Grid.Row="2" Grid.Column="1" Name="LblGraenny" Content="GRANNY" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button Grid.Row="2" Grid.Column="2" Name="BtnGraenny" Content="buy for 100" Click="BtnBuy"/>
 
         </Grid>
     </Grid>

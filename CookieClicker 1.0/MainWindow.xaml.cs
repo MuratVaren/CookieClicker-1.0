@@ -21,8 +21,9 @@ namespace CookieClicker_1._0
     /// </summary>
     public partial class MainWindow : Window
     {
-        private DispatcherTimer klok = new DispatcherTimer();
         private DispatcherTimer upgradesKlok = new DispatcherTimer();
+        private MediaPlayer tapSoundPlayer = new MediaPlayer();
+
 
         decimal counter = 0;
         int pointer = 0;
@@ -36,21 +37,32 @@ namespace CookieClicker_1._0
             upgradesKlok.Interval = new TimeSpan(0, 0, 0, 0 , 10);
             //Timer starten
             upgradesKlok.Start();
-        }
 
+        }
+        
         private void UpgradesKlokAfgelopen(object sender, EventArgs e)
         {
             counter += pointer * 0.001m;
             counter += granny * 0.01m;
+            this.Title = $"You have {counter.ToString("00")} COOKIES";
             LblGetalVuller();
 
         }
+        public void RandomTapSound()
+        {
+            Random random = new Random();
+            int number = random.Next(1, 3);
+            tapSoundPlayer.Open(new Uri($"Assets/Audio/tap-{number}.wav", UriKind.RelativeOrAbsolute));
 
+        }
         private void Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             counter += 1;
             LblGetalVuller();
             ImgCookie.Margin = new Thickness(40);
+            RandomTapSound();
+            tapSoundPlayer.Stop();
+            tapSoundPlayer.Play();
         }
         private void ImgCookie_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
