@@ -1,0 +1,44 @@
+﻿<Window x:Class="CookieClicker_1._0.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CookieClicker_1._0"
+        mc:Ignorable="d" Background="AliceBlue"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image  Name="ImgCookie"  Grid.Column="0" Margin="50" Source="Assets/Images/Cookie.png"
+               MouseLeftButtonDown="Image_MouseLeftButtonDown" MouseLeftButtonUp="ImgCookie_MouseLeftButtonUp"/>
+        <Label Grid.Column="1" Name="LblGetal" Content="" HorizontalAlignment="Center"
+               VerticalAlignment="Center" FontSize="50"/>
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            
+            <Image Grid.Row="0" Grid.Column="0" Stretch="Fill"  Source="Assets/Images/pointer.png"/>
+            <Label Grid.Row="0" Grid.Column="1" Name="LblPointer" Content="POINTER" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button Grid.Row="0" Grid.Column="2" Name="BtnPointer" Content="buy for 15" Click="BtnBuy"/>
+
+
+            <Image Grid.Row="1" Grid.Column="0" Stretch="Fill"  Source="Assets/Images/Granny.png"/>
+            <Label Grid.Row="1" Grid.Column="1" Name="LblGranny" Content="GRANNY" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button Grid.Row="1" Grid.Column="2" Name="BtnGranny" Content="buy for 100" Click="BtnBuy"/>
+
+
+        </Grid>
+    </Grid>
+</Window>
